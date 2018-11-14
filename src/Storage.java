@@ -23,10 +23,27 @@ public class Storage {
         this.bouquets.add(bouquet);
     }
 
+    public void addCustomBouquet(int numRoses, int numTulips, int numChamomomiles){
+        this.bouquets.add(Bouquet.getCustomBouquet(numRoses, numTulips, numChamomomiles));
+    }
+
+    public int numberOfBouquets(){
+        return this.bouquets.size();
+    }
+
     @Override
     public String toString() {
         return "Storage{" +
                 "bouquets=" + bouquets +
                 '}';
+    }
+
+    public static void main(String[] args) {
+        Storage s1 = new Storage();
+        System.out.println("Initial number of bouquets: " + s1.numberOfBouquets());
+        s1.addBouquet(Bouquet.getRandomBouquet());
+        System.out.println("Number of bouquets after adding random one: " + s1.numberOfBouquets());
+        s1.addCustomBouquet(7, 5, 3);
+        System.out.println("Price of custom bouquet: " + s1.bouquets.get(s1.bouquets.size() - 1).getPrice());
     }
 }

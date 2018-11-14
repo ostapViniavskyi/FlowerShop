@@ -4,10 +4,10 @@ import flowersProperties.Color;
 import flowersProperties.Country;
 import flowersProperties.Odor;
 
-public class Rosie extends Flower {
+public class Rose extends Flower {
     private boolean spikes;
 
-    public Rosie(Color color, double length, Odor odor, Country countryOfOrigin, double price, boolean spikes) {
+    public Rose(Color color, double length, Odor odor, Country countryOfOrigin, double price, boolean spikes) {
         super(color, length, odor, countryOfOrigin, price);
         this.spikes = spikes;
     }
@@ -16,8 +16,8 @@ public class Rosie extends Flower {
         return rnd.nextBoolean();
     }
 
-    public static Rosie getRandomFlower(){
-        return new Rosie(getRandomColor(), getRandomLength(), getRandomOdor(),
+    public static Rose getRandomFlower(){
+        return new Rose(getRandomColor(), getRandomLength(), getRandomOdor(),
                 getRandomCountryOfOrigin(), getRandomPrice(), getRandomSpikes());
     }
 

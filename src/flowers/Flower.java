@@ -98,4 +98,14 @@ public abstract class Flower {
         return 20 + rnd.nextDouble() * 50;
     }
 
+    @Override
+    public String toString() {
+        return   '\n' + this.getClass().getName().split("\\.")[1] + "{" +
+                "color=" + color +
+                ", length=" + length +
+                ", odor=" + odor +
+                ", countryOfOrigin=" + countryOfOrigin +
+                ", price=" + price +
+                '}' ;
+    }
 }

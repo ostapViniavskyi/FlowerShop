@@ -23,7 +23,8 @@ public abstract class FlowerList {
     protected int getSize(){
         return flowers.size();
     }
-    private void addFlower(Flower flower) {
+
+    public void addFlower(Flower flower) {
         flowers.add(flower);
     }
 
@@ -31,7 +32,7 @@ public abstract class FlowerList {
         return flowers;
     }
 
-    protected double getPrice(){
+    public double getPrice(){
         double sum = 0;
         for(Flower f: flowers){
             sum += f.getPrice();

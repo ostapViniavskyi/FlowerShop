@@ -2,7 +2,7 @@ package flowersCollections;
 
 import flowers.Chamomile;
 import flowers.Flower;
-import flowers.Rosie;
+import flowers.Rose;
 import flowers.Tulip;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class Bouquet extends FlowerList {
             int flowerType = rnd.nextInt(3);
 
             switch (flowerType) {
-                case 0: flowers.add(Rosie.getRandomFlower()); break;
+                case 0: flowers.add(Rose.getRandomFlower()); break;
                 case 1: flowers.add(Chamomile.getRandomFlower()); break;
                 case 2: flowers.add(Tulip.getRandomFlower()); break;
             }
@@ -33,10 +33,30 @@ public class Bouquet extends FlowerList {
         return new Bouquet(flowers);
     }
 
+    public static Bouquet getCustomBouquet(int numRoses, int numTulips, int numChamomomiles){
+        Bouquet bq = new Bouquet();
+        for (int i = 0; i < numRoses; i++) {
+            bq.addFlower(Rose.getRandomFlower());
+        }
+        for (int i = 0; i < numTulips; i++) {
+            bq.addFlower(Tulip.getRandomFlower());
+        }
+        for (int i = 0; i < numChamomomiles; i++) {
+            bq.addFlower(Chamomile.getRandomFlower());
+        }
+        return bq;
+    }
+
     @Override
     public String toString() {
         return "Bouquet{" +
                 "flowers=" + flowers +
                 '}';
+    }
+
+    public static void main(String[] args) {
+        Bouquet boq = getRandomBouquet();
+        System.out.println(boq);
+        System.out.println(boq.getPrice());
     }
 }

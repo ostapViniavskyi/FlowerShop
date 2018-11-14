@@ -20,4 +20,5 @@ public class Chamomile extends Flower {
         return new Chamomile(getRandomColor(), getRandomLength(), getRandomOdor(),
                 getRandomCountryOfOrigin(), getRandomPrice(), getRandomTherapeutic());
     }
+
 }
