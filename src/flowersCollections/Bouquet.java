@@ -5,7 +5,7 @@ import flowers.Flower;
 import flowers.Rose;
 import flowers.Tulip;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Bouquet extends FlowerList {
@@ -19,7 +19,7 @@ public class Bouquet extends FlowerList {
 
     public static Bouquet getRandomBouquet(){
         int size = rnd.nextInt(10) + 5;
-        List<Flower> flowers = new ArrayList<>();
+        List<Flower> flowers = new LinkedList<>();
 
         for (int i = 0; i < size ; i++) {
             int flowerType = rnd.nextInt(3);
